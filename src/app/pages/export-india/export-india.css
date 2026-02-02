@@ -1,19 +1,373 @@
-:host {
-  display: block;
-  /* Animación de entrada para que la página se sienta fluida */
-  animation: slideIn 0.6s ease-out;
+/* ============================================ */
+/* ANIMACIONES PARA LA SECCIÓN */
+/* ============================================ */
+
+@keyframes slide-in-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
+@keyframes slide-in-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-/* Efecto para resaltar la imagen de cocina */
-img {
-  transition: transform 0.5s ease;
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
-img:hover {
-  transform: scale(1.03);
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(245, 166, 35, 0.3);
+  }
+}
+
+/* ============================================ */
+/* EFECTOS ESPECIALES */
+/* ============================================ */
+
+/* Imagen con efecto de profundidad */
+.image-3d-effect {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-3d-effect:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(5deg) scale(1.05);
+}
+
+/* Efecto de tarjeta flotante */
+.card-float {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+/* Botones con efecto de expansión */
+.button-expand {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button-expand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.7s ease;
+  z-index: -1;
+}
+
+.button-expand:hover::before {
+  left: 100%;
+}
+
+/* ============================================ */
+/* EFECTOS DE BORDE ANIMADO */
+/* ============================================ */
+
+.border-animated {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, #f5a623, #2d5f3f, #f5a623) border-box;
+  background-size: 200% 200%;
+  animation: border-gradient 3s ease infinite;
+}
+
+@keyframes border-gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE TEXTO GRADIENTE ANIMADO */
+/* ============================================ */
+
+.text-gradient-animated {
+  background: linear-gradient(
+    90deg,
+    #2d5f3f,
+    #f5a623,
+    #2d5f3f
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shine 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE ENTRADA SECUENCIAL */
+/* ============================================ */
+
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fade-in-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE ICONOS INTERACTIVOS */
+/* ============================================ */
+
+.icon-hover-3d {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.icon-hover-3d:hover {
+  transform: rotateY(180deg) scale(1.2);
+}
+
+/* ============================================ */
+/* EFECTOS DE SOMBRA DINÁMICA */
+/* ============================================ */
+
+.shadow-dynamic {
+  box-shadow: 
+    0 10px 30px rgba(45, 95, 63, 0.08),
+    0 5px 15px rgba(245, 166, 35, 0.05);
+  transition: box-shadow 0.4s ease;
+}
+
+.shadow-dynamic:hover {
+  box-shadow: 
+    0 20px 60px rgba(45, 95, 63, 0.15),
+    0 10px 30px rgba(245, 166, 35, 0.1);
+}
+
+/* ============================================ */
+/* EFECTOS DE BLUR CON BACKDROP */
+/* ============================================ */
+
+.backdrop-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================ */
+/* ANIMACIONES PARA BOTONES */
+/* ============================================ */
+
+.button-bounce {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-bounce:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.button-bounce:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ============================================ */
+/* EFECTOS DE SELLO/ETIQUETA */
+/* ============================================ */
+
+.stamp-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.stamp-effect::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent 30%
+  );
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================ */
+/* RESPONSIVE MEJORADO */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+  }
+  
+  .mobile-padding {
+    padding: 2rem 1rem !important;
+  }
+  
+  .mobile-gap {
+    gap: 1.5rem !important;
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE LOADING PARA IMÁGENES */
+/* ============================================ */
+
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE HOVER PARA TARJETAS DE BENEFICIOS */
+/* ============================================ */
+
+.benefit-card {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.benefit-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(to right, #f5a623, #2d5f3f);
+  transition: width 0.3s ease;
+}
+
+.benefit-card:hover::after {
+  width: 100%;
+}
+
+/* ============================================ */
+/* EFECTOS DE PULSO PARA ELEMENTOS IMPORTANTES */
+/* ============================================ */
+
+.pulse-important {
+  animation: pulse-glow 2s infinite;
+}
+
+/* ============================================ */
+/* ACCESIBILIDAD MEJORADA */
+/* ============================================ */
+
+.focus-visible {
+  outline: 3px solid #f5a623;
+  outline-offset: 3px;
+}
+
+/* ============================================ */
+/* EFECTOS DE SCROLL REVEAL */
+/* ============================================ */
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================ */
+/* PERFORMANCE OPTIMIZATIONS */
+/* ============================================ */
+
+.performance-optimize {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* ============================================ */
+/* EFECTOS DE PATRÓN DE FONDO ANIMADO */
+/* ============================================ */
+
+.pattern-animated {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(245, 166, 35, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(45, 95, 63, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: pattern-move 20s linear infinite;
+}
+
+@keyframes pattern-move {
+  0% {
+    background-position: 0 0, 50px 50px;
+  }
+  100% {
+    background-position: 50px 50px, 100px 100px;
+  }
 }

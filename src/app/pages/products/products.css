@@ -1,18 +1,437 @@
-:host {
-  display: block;
+/* ============================================ */
+/* ANIMACIONES MEJORADAS PARA PRODUCTOS */
+/* ============================================ */
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Efecto para que la botella se vea imponente */
-img {
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out;
+}
+
+/* Efecto de perspectiva 3D */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Animación de rotación suave */
+@keyframes float-rotate {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+.group:hover .group-hover\:rotate-2 {
+  animation: float-rotate 3s ease-in-out infinite;
+}
+
+/* ============================================ */
+/* EFECTOS ESPECIALES PARA BOTELLA */
+/* ============================================ */
+
+/* Efecto de vidrio/brillo */
+.glass-effect {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sombra dinámica para botella */
+.product-shadow {
+  filter: drop-shadow(0 25px 40px rgba(0, 0, 0, 0.15))
+          drop-shadow(0 10px 20px rgba(245, 166, 35, 0.1));
+  transition: filter 0.5s ease;
+}
+
+.product-shadow:hover {
+  filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.2))
+          drop-shadow(0 15px 25px rgba(245, 166, 35, 0.15));
+}
+
+/* ============================================ */
+/* EFECTOS PARA TARJETAS DE ESPECIFICACIONES */
+/* ============================================ */
+
+/* Efecto de elevación */
+.card-elevate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+}
+
+.card-elevate:hover {
+  transform: translateY(-8px) translateZ(0);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Borde animado */
+.animated-border {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, #f5a623, #2d5f3f, #f5a623) border-box;
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE TEXTO GRADIENTE */
+/* ============================================ */
+
+.text-gradient-gold-green {
+  background: linear-gradient(45deg, #f5a623, #2d5f3f, #f5a623);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shine 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE BOTÓN PREMIUM */
+/* ============================================ */
+
+.premium-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.premium-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.7s ease;
+  z-index: 1;
+}
+
+.premium-button:hover::before {
+  left: 100%;
+}
+
+/* ============================================ */
+/* EFECTOS DE ICONOS */
+/* ============================================ */
+
+.icon-3d {
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.icon-3d:hover {
+  transform: rotateY(180deg) scale(1.2);
+}
+
+/* Animación de pulso para iconos importantes */
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+/* ============================================ */
+/* EFECTOS DE TABLA MEJORADOS */
+/* ============================================ */
+
+.table-row-hover {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.table-row-hover:hover {
+  background-color: rgba(245, 166, 35, 0.05);
+  transform: translateX(5px);
+}
+
+.table-row-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: linear-gradient(to bottom, #f5a623, #2d5f3f);
+  transform: scaleY(0);
   transition: transform 0.3s ease;
 }
 
-img:hover {
-  transform: scale(1.05);
+.table-row-hover:hover::after {
+  transform: scaleY(1);
 }
 
-/* Estilo para las filas de la tabla técnica */
-tr:hover {
-  background-color: rgba(255, 255, 255, 0.5);
+/* ============================================ */
+/* EFECTOS DE BADGE/PREMIUM TAG */
+/* ============================================ */
+
+.badge-premium {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-premium::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent 30%
+  );
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE FONDO PATRONADO */
+/* ============================================ */
+
+.pattern-dots {
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(45, 95, 63, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(245, 166, 35, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.pattern-leaves {
+  background-image: 
+    url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgMTBDMjIgMTAgMzAgMTUgMzAgMjBDMzAgMjUgMjIgMzAgMjAgMzBDMTggMzAgMTAgMjUgMTAgMjBDMTAgMTUgMTggMTAgMjAgMTBaIiBmaWxsPSIjMmQ1ZjNmLjA1Ii8+PC9zdmc+');
+  background-size: 100px 100px;
+  opacity: 0.3;
+}
+
+/* ============================================ */
+/* EFECTOS DE SCROLL REVEAL PARA PRODUCTO */
+/* ============================================ */
+
+.product-reveal {
+  opacity: 0;
+  transform: translateY(50px) rotateX(10deg);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+/* ============================================ */
+/* EFECTOS DE TEXTO ANIMADO PARA BENEFICIOS */
+/* ============================================ */
+
+.benefit-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #f5a623, #2d5f3f);
+  transition: width 0.5s ease;
+}
+
+.benefit-item:hover::before {
+  width: 100%;
+}
+
+/* ============================================ */
+/* EFECTOS DE SOMBRA DINÁMICA */
+/* ============================================ */
+
+.dynamic-shadow {
+  box-shadow: 
+    0 10px 30px rgba(45, 95, 63, 0.08),
+    0 5px 15px rgba(245, 166, 35, 0.05);
+  transition: box-shadow 0.4s ease;
+}
+
+.dynamic-shadow:hover {
+  box-shadow: 
+    0 20px 60px rgba(45, 95, 63, 0.15),
+    0 10px 30px rgba(245, 166, 35, 0.1),
+    0 0 0 1px rgba(245, 166, 35, 0.1);
+}
+
+/* ============================================ */
+/* RESPONSIVE MEJORADO */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  .product-image-container {
+    padding: 1.5rem !important;
+  }
+  
+  .benefit-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .specs-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .cert-badges {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .product-subtitle {
+    font-size: 1.1rem !important;
+  }
+  
+  .presentation-cards {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================ */
+/* OPTIMIZACIONES DE RENDIMIENTO */
+/* ============================================ */
+
+/* Mejora de renderizado */
+.product-container {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Optimización de imágenes */
+.product-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* ============================================ */
+/* EFECTOS DE HOVER PARA PRESENTACIONES */
+/* ============================================ */
+
+.presentation-card {
+  position: relative;
+  z-index: 1;
+}
+
+.presentation-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent, rgba(245, 166, 35, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.presentation-card:hover::after {
+  opacity: 1;
+}
+
+/* ============================================ */
+/* EFECTOS DE INDICADOR DE CALIDAD */
+/* ============================================ */
+
+.quality-meter {
+  position: relative;
+  overflow: hidden;
+}
+
+.quality-meter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.8), 
+    transparent);
+  transform: translateX(-100%);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ============================================ */
+/* EFECTOS DE FOCUS MEJORADOS */
+/* ============================================ */
+
+.focus-ring {
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 
+    0 0 0 3px rgba(245, 166, 35, 0.5),
+    0 0 0 6px rgba(45, 95, 63, 0.2);
 }

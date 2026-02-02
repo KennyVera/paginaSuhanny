@@ -2,28 +2,64 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between h-20 items-center">
       
-      <div class="flex-shrink-0 flex items-center cursor-pointer">
+      <div class="flex-shrink-0 flex items-center cursor-pointer" routerLink="/">
         <span class="text-2xl font-serif font-bold text-green-800">
           La <span class="text-green-600">Favorita</span>
         </span>
       </div>
 
       <div class="hidden md:flex space-x-8 items-center">
-        <a routerLink="/" class="text-sm font-medium text-gray-700 hover:text-green-600 border-b-2 border-yellow-500 pb-1">Inicio</a>
-        <a routerLink="/nosotros" class="text-sm font-medium text-gray-500 hover:text-green-600 transition">Nosotros</a>
-        <a routerLink="/productos" class="text-sm font-medium text-gray-500 hover:text-green-600 transition">Producto</a>
-        <a routerLink="/exportacion" class="text-sm font-medium text-gray-500 hover:text-green-600 transition">Exportación a India</a>
-        <a routerLink="/contacto" class="text-sm font-medium text-gray-500 hover:text-green-600 transition">Contacto</a>
+        <a routerLink="/" 
+           routerLinkActive="border-b-2 border-yellow-500 text-green-700" 
+           [routerLinkActiveOptions]="{exact: true}"
+           class="text-sm font-medium text-gray-500 hover:text-green-600 pb-1 transition-all">
+           Inicio
+        </a>
+        
+        <a routerLink="/nosotros" 
+           routerLinkActive="border-b-2 border-yellow-500 text-green-700" 
+           class="text-sm font-medium text-gray-500 hover:text-green-600 pb-1 transition-all">
+           Nosotros
+        </a>
+        
+        <a routerLink="/productos" 
+           routerLinkActive="border-b-2 border-yellow-500 text-green-700" 
+           class="text-sm font-medium text-gray-500 hover:text-green-600 pb-1 transition-all">
+           Producto
+        </a>
+        
+        <a routerLink="/exportacion" 
+           routerLinkActive="border-b-2 border-yellow-500 text-green-700" 
+           class="text-sm font-medium text-gray-500 hover:text-green-600 pb-1 transition-all">
+           Exportación a India
+        </a>
+        
+        <a routerLink="/contacto" 
+           routerLinkActive="border-b-2 border-yellow-500 text-green-700" 
+           class="text-sm font-medium text-gray-500 hover:text-green-600 pb-1 transition-all">
+           Contacto
+        </a>
       </div>
 
       <div class="md:hidden flex items-center">
-        <button class="text-gray-500 hover:text-green-600">
+        <button (click)="toggleMenu()" class="text-gray-500 hover:text-green-600 focus:outline-none">
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
 
+    </div>
+  </div>
+
+  <div *ngIf="isMenuOpen" class="md:hidden bg-white border-t border-gray-100 pb-4">
+    <div class="flex flex-col space-y-4 px-4 pt-4">
+      <a routerLink="/" (click)="toggleMenu()" class="text-gray-600 hover:text-green-600">Inicio</a>
+      <a routerLink="/nosotros" (click)="toggleMenu()" class="text-gray-600 hover:text-green-600">Nosotros</a>
+      <a routerLink="/productos" (click)="toggleMenu()" class="text-gray-600 hover:text-green-600">Producto</a>
+      <a routerLink="/exportacion" (click)="toggleMenu()" class="text-gray-600 hover:text-green-600">Exportación a India</a>
+      <a routerLink="/contacto" (click)="toggleMenu()" class="text-gray-600 hover:text-green-600">Contacto</a>
     </div>
   </div>
 </nav>

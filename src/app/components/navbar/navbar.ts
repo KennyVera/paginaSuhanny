@@ -6,12 +6,11 @@ import { RouterModule } from '@angular/router';
   selector: 'app-navbar',
   standalone: true,
   imports: [CommonModule, RouterModule],
-  templateUrl: './navbar.html',
+  templateUrl: './navbar.html', // Verifica si tu archivo es navbar.html o navbar.component.html
   styleUrl: './navbar.css'
 })
 export class NavbarComponent {
-  // Aquí podrías añadir lógica más adelante, 
-  // como una variable para controlar el menú móvil
+  // Lógica para el menú móvil (hamburguesa)
   isMenuOpen = false;
 
   toggleMenu() {
