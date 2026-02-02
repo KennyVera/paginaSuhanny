@@ -1,17 +1,482 @@
 :host {
   display: block;
-  /* Asegura que la página ocupe el espacio necesario */
-  animation: fadeIn 0.5s ease-in;
 }
 
+/* ============================================ */
+/* ANIMACIONES PRINCIPALES */
+/* ============================================ */
+
+/* Fade in general */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Ajuste para que las imágenes no se deformen */
+:host {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Fade in desde la izquierda */
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-left {
+  animation: fade-in-left 0.8s ease-out;
+}
+
+/* Fade in desde la derecha */
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-right {
+  animation: fade-in-right 0.8s ease-out;
+}
+
+/* Fade in hacia arriba */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+/* Fade in simple */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* ============================================ */
+/* ROTACIÓN LENTA PARA GIRASOL */
+/* ============================================ */
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* ============================================ */
+/* IMÁGENES RESPONSIVE */
+/* ============================================ */
+
 img {
-  max-height: 400px;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optimización de renderizado */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Control de altura de imágenes principales */
+.rounded-2xl img,
+section img {
   object-fit: cover;
+  object-position: center;
+}
+
+/* ============================================ */
+/* CARDS Y HOVER EFFECTS */
+/* ============================================ */
+
+/* Transiciones suaves para todas las cards */
+.group,
+[class*="hover:shadow"],
+[class*="hover:border"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Efecto hover en cards de valores */
+.group:hover {
+  transform: translateY(-8px);
+}
+
+/* Efecto de escala en iconos */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.15);
+}
+
+/* ============================================ */
+/* BORDES Y LÍNEAS DECORATIVAS */
+/* ============================================ */
+
+/* Línea decorativa bajo títulos */
+.w-24.h-1 {
+  animation: expand-width 0.8s ease-out;
+}
+
+@keyframes expand-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 6rem;
+  }
+}
+
+/* Bordes laterales con animación */
+.border-l-4 {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.border-l-4:hover {
+  padding-left: 1.25rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* ============================================ */
+/* BOTONES */
+/* ============================================ */
+
+a[routerLink],
+button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+a[routerLink]:active,
+button:active {
+  transform: scale(0.97);
+}
+
+/* Focus visible para accesibilidad */
+a[routerLink]:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f5a623;
+  outline-offset: 3px;
+}
+
+/* Efecto de brillo en hover */
+a[routerLink]:hover,
+button:hover {
+  box-shadow: 0 10px 30px rgba(245, 166, 35, 0.3);
+}
+
+/* ============================================ */
+/* GRADIENTES ANIMADOS */
+/* ============================================ */
+
+/* Gradiente de fondo con animación sutil */
+.bg-gradient-to-br {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ============================================ */
+/* SECCIÓN INDIA - EFECTOS ESPECIALES */
+/* ============================================ */
+
+/* Backdrop blur para cards en sección oscura */
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Animación de pulso para elementos destacados */
+.bg-white\/10 {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(245, 166, 35, 0.3);
+  }
+}
+
+/* ============================================ */
+/* RESPONSIVE ADJUSTMENTS */
+/* ============================================ */
+
+/* Ajuste de tamaños en móviles pequeños */
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.875rem !important;
+  }
+  
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  h3 {
+    font-size: 1.125rem !important;
+  }
+  
+  p {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Ajuste de padding en secciones para móviles */
+@media (max-width: 640px) {
+  section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .py-16,
+  .py-20,
+  .py-24 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Grid responsive para valores */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid.md\:grid-cols-3 > div {
+    min-height: 280px;
+  }
+}
+
+/* ============================================ */
+/* SOMBRAS MEJORADAS */
+/* ============================================ */
+
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-md {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-xl {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.shadow-2xl {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================ */
+/* TIPOGRAFÍA HINDI */
+/* ============================================ */
+
+/* Mejor renderizado para texto en hindi */
+h1, h2, h3, h4, p {
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Espaciado de línea óptimo para hindi */
+h1, h2, h3, h4 {
+  line-height: 1.3;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* ============================================ */
+/* DECORACIONES Y PATRONES */
+/* ============================================ */
+
+/* Círculos decorativos difusos */
+.blur-3xl {
+  filter: blur(80px);
+}
+
+.blur-2xl {
+  filter: blur(40px);
+}
+
+/* Opacidad para decoraciones */
+.opacity-10 {
+  opacity: 0.1;
+}
+
+.opacity-20 {
+  opacity: 0.2;
+}
+
+.opacity-30 {
+  opacity: 0.3;
+}
+
+/* ============================================ */
+/* PERFORMANCE OPTIMIZATIONS */
+/* ============================================ */
+
+/* Hardware acceleration para transformaciones */
+.transform,
+.hover\:scale-105:hover,
+.hover\:-translate-y-2:hover {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================ */
+/* ACCESIBILIDAD */
+/* ============================================ */
+
+/* Mejora de contraste para texto sobre fondos oscuros */
+.bg-gradient-to-br.from-\[\#2d5f3f\] h2,
+.bg-gradient-to-br.from-\[\#2d5f3f\] p {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Skip a contenido principal (para lectores de pantalla) */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #f5a623;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ============================================ */
+/* PRINT STYLES */
+/* ============================================ */
+
+@media print {
+  .absolute,
+  button,
+  a[routerLink] {
+    display: none;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+  
+  .bg-gradient-to-br,
+  .bg-gradient-to-b {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* ============================================ */
+/* LOADING STATES */
+/* ============================================ */
+
+/* Skeleton loading para imágenes */
+img[src=""],
+img:not([src]) {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================ */
+/* UTILIDADES ADICIONALES */
+/* ============================================ */
+
+/* Prevenir selección de texto en elementos decorativos */
+.absolute svg,
+.blur-3xl,
+.blur-2xl {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Cursor pointer para elementos interactivos */
+.group,
+a[routerLink],
+button,
+[class*="hover:"] {
+  cursor: pointer;
+}
+
+/* Fix para overflow horizontal en móviles */
+body {
+  overflow-x: hidden;
+}
+
+/* ============================================ */
+/* DARK MODE READY (Opcional) */
+/* ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  /* 
+  Aquí puedes agregar estilos para modo oscuro si lo necesitas en el futuro
+  Por ahora está comentado ya que el diseño es para modo claro
+  */
 }

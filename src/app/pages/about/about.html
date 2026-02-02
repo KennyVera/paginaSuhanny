@@ -1,66 +1,275 @@
 <div class="bg-white">
-  <section class="py-16 md:py-24 bg-[#fdfaf5]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h1 class="text-4xl font-serif font-bold text-green-800 mb-6">Nuestra Historia</h1>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            La Favorita nació con el sueño de llevar la pureza del campo a cada hogar. 
-            Nos especializamos en la producción de aceite de girasol premium, manteniendo 
-            estándares de calidad internacionales que nos permiten hoy mirar hacia nuevos horizontes.
+
+  <!-- ============================================ -->
+  <!-- OUR STORY SECTION - हमारी कहानी -->
+  <!-- ============================================ -->
+  <section class="relative py-16 md:py-24 bg-gradient-to-br from-[#faba54] to-[#f5f0e8] overflow-hidden">
+    
+    <!-- Decoración de fondo -->
+    <div class="absolute top-0 right-0 w-64 h-64 bg-yellow-200 rounded-full blur-3xl opacity-20"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-green-200 rounded-full blur-3xl opacity-20"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        
+        <!-- Texto - हमारी कहानी -->
+        <div class="order-2 lg:order-1 animate-fade-in-left">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-[#2d5f3f] mb-6">
+            हमारी कहानी
+          </h1>
+          <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-6">
+            ला फेवोरिटा का जन्म खेतों की शुद्धता को हर घर तक पहुंचाने के सपने से हुआ। 
+            हम प्रीमियम सूरजमुखी तेल के उत्पादन में विशेषज्ञ हैं, अंतरराष्ट्रीय गुणवत्ता मानकों को बनाए रखते हुए 
+            जो आज हमें नए क्षितिज की ओर देखने की अनुमति देता है।
           </p>
-          <div class="grid grid-cols-2 gap-6">
-            <div class="border-l-4 border-yellow-500 pl-4">
-              <h4 class="font-bold text-green-700">Misión</h4>
-              <p class="text-sm text-gray-500">Proveer nutrición saludable con aceites vegetales de la más alta pureza.</p>
+
+          <!-- Mission & Vision Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Mission - मिशन -->
+            <div class="border-l-4 border-[#f5a623] pl-4 py-2 bg-white/50 rounded-r-lg backdrop-blur-sm hover:bg-white transition-all duration-300">
+              <h4 class="font-bold text-[#2d5f3f] text-lg mb-2">मिशन</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                उच्चतम शुद्धता वाले वनस्पति तेलों के साथ स्वस्थ पोषण प्रदान करना।
+              </p>
             </div>
-            <div class="border-l-4 border-green-600 pl-4">
-              <h4 class="font-bold text-green-700">Visión</h4>
-              <p class="text-sm text-gray-500">Ser la marca líder de exportación de aceite de girasol en el mercado asiático.</p>
+
+            <!-- Vision - विजन -->
+            <div class="border-l-4 border-[#2d5f3f] pl-4 py-2 bg-white/50 rounded-r-lg backdrop-blur-sm hover:bg-white transition-all duration-300">
+              <h4 class="font-bold text-[#2d5f3f] text-lg mb-2">विजन</h4>
+              <p class="text-sm text-gray-600 leading-relaxed">
+                एशियाई बाजार में सूरजमुखी तेल निर्यात की अग्रणी ब्रांड बनना।
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Imagen -->
+        <div class="order-1 lg:order-2 animate-fade-in-right">
+          <div class="relative">
+            <!-- Decoración -->
+            <div class="absolute -top-4 -right-4 w-24 h-24 bg-[#f5a623] rounded-full blur-2xl opacity-30"></div>
+            
+            <!-- Imagen principal -->
+          <!-- Imagen principal -->
+            <div class="relative max-w-md mx-auto rounded-2xl overflow-hidden shadow-2xl
+                        transform transition-transform duration-300 hover:scale-105">
+              
+                <img 
+                src="/img/presentacion.jpeg" 
+                alt="सूरजमुखी के खेत - Sunflower Fields"
+                class="w-full h-40 sm:h-48 md:h-52 lg:h-56 object-cover">
+
+              <!-- Overlay gradient (muy suave) -->
+              <div class="absolute inset-0 bg-gradient-to-t from-[#2d5f3f]/10 to-transparent"></div>
             </div>
           </div>
         </div>
-        <div class="rounded-2xl overflow-hidden shadow-xl">
-          <img src="assets/img/campos-girasol.jpg" alt="Campos de Girasol" class="w-full h-full object-cover">
-        </div>
+
       </div>
     </div>
   </section>
 
-  <section class="py-16">
-    <div class="max-w-7xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-serif font-bold text-green-800 mb-12">Nuestros Valores</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-          <div class="text-yellow-500 mb-4 text-3xl">🌿</div>
-          <h3 class="font-bold mb-2">Pureza Natural</h3>
-          <p class="text-gray-500 text-sm">Sin aditivos innecesarios, solo la esencia del girasol.</p>
+
+  <!-- ============================================ -->
+  <!-- OUR VALUES SECTION - हमारे मूल्य -->
+  <!-- ============================================ -->
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Título de la sección -->
+      <div class="text-center mb-12 animate-fade-in-up">
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#2d5f3f] mb-4">
+          हमारे मूल्य
+        </h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-[#f5a623] to-[#2d5f3f] mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Grid de valores -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        
+        <!-- Valor 1: Pureza Natural -->
+        <div class="group p-8 bg-gradient-to-br from-white to-green-50 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#f5a623] transition-all duration-300 transform hover:-translate-y-2">
+          <div class="flex justify-center mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#f5a623] to-yellow-300 rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+              🌿
+            </div>
+          </div>
+          <h3 class="font-bold text-[#2d5f3f] text-xl mb-3 text-center">प्राकृतिक शुद्धता</h3>
+          <p class="text-gray-600 text-sm text-center leading-relaxed">
+            कोई अनावश्यक एडिटिव्स नहीं, केवल सूरजमुखी का सार।
+          </p>
         </div>
-        <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-          <div class="text-yellow-500 mb-4 text-3xl">🤝</div>
-          <h3 class="font-bold mb-2">Integridad</h3>
-          <p class="text-gray-500 text-sm">Relaciones transparentes con nuestros proveedores y clientes.</p>
+
+        <!-- Valor 2: Integridad -->
+        <div class="group p-8 bg-gradient-to-br from-white to-yellow-50 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#f5a623] transition-all duration-300 transform hover:-translate-y-2">
+          <div class="flex justify-center mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#f5a623] to-yellow-300 rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+              🤝
+            </div>
+          </div>
+          <h3 class="font-bold text-[#2d5f3f] text-xl mb-3 text-center">ईमानदारी</h3>
+          <p class="text-gray-600 text-sm text-center leading-relaxed">
+            हमारे आपूर्तिकर्ताओं और ग्राहकों के साथ पारदर्शी संबंध।
+          </p>
         </div>
-        <div class="p-8 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-          <div class="text-yellow-500 mb-4 text-3xl">🌎</div>
-          <h3 class="font-bold mb-2">Calidad Global</h3>
-          <p class="text-gray-500 text-sm">Certificaciones que avalan nuestro producto en cualquier frontera.</p>
+
+        <!-- Valor 3: Calidad Global -->
+        <div class="group p-8 bg-gradient-to-br from-white to-green-50 rounded-xl shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#f5a623] transition-all duration-300 transform hover:-translate-y-2">
+          <div class="flex justify-center mb-4">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#2d5f3f] to-green-400 rounded-full flex items-center justify-center text-3xl shadow-lg group-hover:scale-110 transition-transform duration-300">
+              🌎
+            </div>
+          </div>
+          <h3 class="font-bold text-[#2d5f3f] text-xl mb-3 text-center">वैश्विक गुणवत्ता</h3>
+          <p class="text-gray-600 text-sm text-center leading-relaxed">
+            प्रमाणपत्र जो किसी भी सीमा पर हमारे उत्पाद का समर्थन करते हैं।
+          </p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <section class="py-16 bg-green-900 text-white">
-    <div class="max-w-5xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-serif font-bold mb-6">Presencia Internacional: Objetivo India</h2>
-      <p class="text-green-100 text-lg mb-8 leading-relaxed">
-        Nuestra calidad premium está diseñada para adaptarse perfectamente a la rica cultura culinaria de la India. 
-        Estamos trabajando para llevar los beneficios del aceite de girasol La Favorita a Mumbai y Nueva Delhi, 
-        asegurando productos saludables para las familias modernas de Asia.
+
+  <!-- ============================================ -->
+  <!-- INDIA MARKET SECTION - भारत बाजार -->
+  <!-- ============================================ -->
+  <section class="relative py-16 md:py-20 bg-gradient-to-br from-[#2d5f3f] via-[#1f4229] to-[#2d5f3f] text-white overflow-hidden">
+    
+    <!-- Patrón decorativo de fondo -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full" 
+        style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.05) 35px, rgba(255,255,255,.05) 70px);">
+      </div>
+    </div>
+
+    <!-- Girasoles decorativos -->
+    <div class="absolute top-10 right-10 w-32 h-32 opacity-20">
+      <svg viewBox="0 0 100 100" class="w-full h-full animate-spin-slow">
+        <circle cx="50" cy="50" r="15" fill="#f5a623"/>
+        <g>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(0 50 50)"/>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(45 50 50)"/>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(90 50 50)"/>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(135 50 50)"/>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(180 50 50)"/>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(225 50 50)"/>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(270 50 50)"/>
+          <ellipse cx="50" cy="20" rx="8" ry="15" fill="#FFD700" transform="rotate(315 50 50)"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      
+      <!-- Título -->
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-6 animate-fade-in-up">
+        अंतर्राष्ट्रीय उपस्थिति: लक्ष्य भारत
+      </h2>
+
+      <!-- Descripción -->
+      <p class="text-green-100 text-base sm:text-lg lg:text-xl mb-8 leading-relaxed max-w-3xl mx-auto animate-fade-in">
+        हमारी प्रीमियम गुणवत्ता भारत की समृद्ध पाक संस्कृति के साथ पूरी तरह से अनुकूल होने के लिए डिज़ाइन की गई है। 
+        हम मुंबई और नई दिल्ली में ला फेवोरिटा सूरजमुखी तेल के लाभ लाने के लिए काम कर रहे हैं, 
+        एशिया के आधुनिक परिवारों के लिए स्वस्थ उत्पाद सुनिश्चित करते हुए।
       </p>
-      <button routerLink="/exportacion" class="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-white font-bold py-3 px-10 rounded-full transition">
-        Ver Plan de Exportación
-      </button>
+
+      <!-- Características destacadas -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10 max-w-4xl mx-auto">
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+          <div class="text-[#f5a623] text-3xl mb-2">🇮🇳</div>
+          <h4 class="font-bold mb-1">भारतीय रसोई के लिए</h4>
+          <p class="text-sm text-green-100">पारंपरिक व्यंजनों के लिए आदर्श</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+          <div class="text-[#f5a623] text-3xl mb-2">✓</div>
+          <h4 class="font-bold mb-1">प्रमाणित गुणवत्ता</h4>
+          <p class="text-sm text-green-100">अंतर्राष्ट्रीय मानकों के अनुसार</p>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+          <div class="text-[#f5a623] text-3xl mb-2">💚</div>
+          <h4 class="font-bold mb-1">स्वस्थ परिवार</h4>
+          <p class="text-sm text-green-100">विटामिन ई से भरपूर</p>
+        </div>
+
+      </div>
+
+      <!-- CTA Button -->
+      <a
+        routerLink="/exportacion"
+        class="inline-block border-2 border-[#f5a623] bg-[#f5a623] text-white hover:bg-transparent hover:text-[#f5a623] font-bold text-base sm:text-lg py-3 px-10 sm:py-4 sm:px-12 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+        निर्यात योजना देखें
+      </a>
+
+    </div>
+
+    <!-- Barra decorativa inferior -->
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#f5a623] to-transparent"></div>
+  </section>
+
+
+  <!-- ============================================ -->
+  <!-- WHY CHOOSE US SECTION - हमें क्यों चुनें -->
+  <!-- ============================================ -->
+  <section class="py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Título -->
+      <div class="text-center mb-12">
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-[#2d5f3f] mb-4">
+          ला फेवोरिटा क्यों चुनें?
+        </h2>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+          भारतीय बाजार के लिए विशेष रूप से तैयार
+        </p>
+      </div>
+
+      <!-- Grid de beneficios -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Beneficio 1 -->
+        <div class="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">✨</span>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">100% शुद्ध</h4>
+          <p class="text-sm text-gray-600">कोई मिलावट नहीं</p>
+        </div>
+
+        <!-- Beneficio 2 -->
+        <div class="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🏆</span>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">प्रीमियम ग्रेड</h4>
+          <p class="text-sm text-gray-600">उच्चतम गुणवत्ता</p>
+        </div>
+
+        <!-- Beneficio 3 -->
+        <div class="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🔬</span>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">प्रयोगशाला परीक्षित</h4>
+          <p class="text-sm text-gray-600">प्रमाणित सुरक्षा</p>
+        </div>
+
+        <!-- Beneficio 4 -->
+        <div class="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+          <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">📦</span>
+          </div>
+          <h4 class="font-bold text-gray-800 mb-2">सुरक्षित पैकेजिंग</h4>
+          <p class="text-sm text-gray-600">ताजगी की गारंटी</p>
+        </div>
+
+      </div>
     </div>
   </section>
+
 </div>
