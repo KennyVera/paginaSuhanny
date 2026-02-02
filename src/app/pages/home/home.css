@@ -1,0 +1,185 @@
+:host {
+  display: block;
+}
+
+/* =========================
+   ANIMACIONES PRINCIPALES
+========================= */
+
+/* Flotado suave botella */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Rotación lenta girasol */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* =========================
+   HERO ANIMATIONS (CONTROLADAS)
+========================= */
+
+.hero h1 {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero p {
+  animation: fadeIn 1.2s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* =========================
+   CARDS FEATURES
+========================= */
+
+.feature-card {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.feature-card svg {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover svg {
+  transform: scale(1.15);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,100% { transform: scale(1.15); }
+  50% { transform: scale(1.25); }
+}
+
+/* =========================
+   ENTRADA DE CARDS
+========================= */
+
+.animate-cards > div {
+  animation: slideInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animate-cards > div:nth-child(1) { animation-delay: 0.1s; }
+.animate-cards > div:nth-child(2) { animation-delay: 0.2s; }
+.animate-cards > div:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   PARALLAX CONTROLADO
+========================= */
+
+.parallax {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #f5a623;
+  outline-offset: 3px;
+  border-radius: 0.375rem;
+}
+
+/* =========================
+   GRADIENTE ANIMADO
+========================= */
+
+.gradient-animated {
+  background-size: 200% auto;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%,100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+/* =========================
+   UTILIDADES
+========================= */
+
+.shadow-custom {
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+button,
+a[routerLink] {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimización visual */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+/* =========================
+   HERO BASE (OBLIGATORIO)
+========================= */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,10 @@
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* Efecto suave para los enlaces */
+a {
+  transition: all 0.3s ease;
+}

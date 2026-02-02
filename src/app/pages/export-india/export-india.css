@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  /* Animación de entrada para que la página se sienta fluida */
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Efecto para resaltar la imagen de cocina */
+img {
+  transition: transform 0.5s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+}

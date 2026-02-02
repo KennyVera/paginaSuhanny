@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  margin-top: auto; /* Ayuda a que el footer se empuje al fondo si hay poco contenido */
+}
+
+/* Suavizado de transiciones para los botones de redes sociales */
+a {
+  transition: transform 0.2s ease-in-out;
+}
+
+a:hover {
+  transform: translateY(-3px);
+}

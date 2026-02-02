@@ -1,0 +1,18 @@
+:host {
+  display: block;
+}
+
+/* Efecto para que la botella se vea imponente */
+img {
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para las filas de la tabla técnica */
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}

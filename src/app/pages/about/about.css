@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  /* Asegura que la página ocupe el espacio necesario */
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ajuste para que las imágenes no se deformen */
+img {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
