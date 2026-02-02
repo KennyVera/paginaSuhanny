@@ -336,3 +336,246 @@
     linear-gradient(white, white);
   background-size: 10px 10px;
 }
+
+
+/* ============================================ */
+/* EFECTOS PARA SECCIÓN CORPORATIVA */
+/* ============================================ */
+
+/* Animación de entrada */
+@keyframes corporate-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.corporate-section {
+  animation: corporate-fade-in 0.8s ease-out;
+}
+
+/* Efecto de tarjeta flotante */
+.card-float-effect {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.card-float-effect:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto de borde animado para tarjetas destacadas */
+.premium-card-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-card-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #f5a623, 
+    #2d5f3f, 
+    #f5a623, 
+    #2d5f3f);
+  z-index: -1;
+  border-radius: inherit;
+  animation: border-rotate 3s linear infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes border-rotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Efecto de brillo en iconos */
+.icon-glow {
+  filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.3));
+  transition: filter 0.3s ease;
+}
+
+.icon-glow:hover {
+  filter: drop-shadow(0 0 12px rgba(245, 166, 35, 0.5));
+}
+
+/* Efecto de expansión para listas */
+.list-item-expand {
+  position: relative;
+  padding-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.list-item-expand::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, #f5a623, #2d5f3f);
+  transition: width 0.3s ease;
+}
+
+.list-item-expand:hover::before {
+  width: 1rem;
+}
+
+/* Gradiente de texto animado para títulos */
+.text-gradient-animated {
+  background: linear-gradient(
+    90deg,
+    #2d5f3f,
+    #f5a623,
+    #2d5f3f
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: text-shine 3s ease-in-out infinite alternate;
+}
+
+@keyframes text-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Efecto de pulso suave para elementos importantes */
+.soft-pulse {
+  animation: soft-pulse 2s ease-in-out infinite;
+}
+
+@keyframes soft-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+/* Efecto de elevación en hover */
+.elevate-on-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.elevate-on-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto de fondo con patrón sutil */
+.pattern-bg {
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(245, 166, 35, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(45, 95, 63, 0.05) 0%, transparent 50%);
+  background-size: cover;
+}
+
+/* Efecto de transición para textos */
+.text-transition {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.text-transition:hover {
+  color: #f5a623;
+  transform: translateX(5px);
+}
+
+/* Efecto de tarjeta con profundidad */
+.card-depth {
+  perspective: 1000px;
+}
+
+.card-depth-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.card-depth:hover .card-depth-inner {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* Efecto de resaltado para secciones importantes */
+.highlight-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.highlight-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #f5a623, #2d5f3f);
+  transform: translateX(-100%);
+  animation: highlight-slide 3s ease-in-out infinite;
+}
+
+@keyframes highlight-slide {
+  0%, 100% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+/* Efecto de parpadeo sutil para atención */
+.attention-blink {
+  animation: attention-blink 3s ease-in-out infinite;
+}
+
+@keyframes attention-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .corporate-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .card-mobile {
+    padding: 1.5rem;
+  }
+  
+  .section-title-mobile {
+    font-size: 2rem;
+  }
+}
+
+/* Optimización de rendimiento */
+.performance-optimize {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
