@@ -7,22 +7,21 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; /* 🔥 CAMBIADO: Empuja el contenido a la izquierda */
+  padding-left: 5%;           /* Espacio extra para que no toque el borde de la pantalla */
 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-
-
-/* Contenido */
 .hero-content {
   position: relative;
   z-index: 1;
-  text-align: center;
+  text-align: left; /* 🔥 CAMBIADO: Alinea el texto a la izquierda */
   padding: 1rem;
-  max-width: 64rem;
+  max-width: 50rem; /* Reducimos un poco el ancho para que se vea mejor a la izquierda */
+  margin: 0;        /* Quitamos el auto para que no se centre */
 }
 
 /* Barra inferior */
